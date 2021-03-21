@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:1909
+FROM mcr.microsoft.com/windows/servercore:20H2
 
 LABEL maintainer="Luis Martinez de Bartolome <luism@jfrog.com>"
 
