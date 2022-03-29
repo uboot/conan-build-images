@@ -11,12 +11,9 @@ RUN apt-get -qq install -y --no-install-recommends \
         ssh-client \
         git \
         make \
-        g++ \
-    && groupadd 1001 -g 1001 \
-    && groupadd 1000 -g 1000 \
-    && groupadd 2000 -g 2000 \
-    && groupadd 999 -g 999 \
-    && useradd -ms /bin/bash conan -g 1001 -G 1000,2000,999 \
+        g++
+RUN groupadd conan \
+    && useradd -ms /bin/bash conan -g conan \
     && printf "conan:conan" | chpasswd \
     && adduser conan sudo \
     && printf "conan ALL= NOPASSWD: ALL\\n" >> /etc/sudoers
@@ -27,4 +24,3 @@ RUN sudo pip3 install -q --no-cache-dir \
         conan
 
 WORKDIR /home/conan
-
