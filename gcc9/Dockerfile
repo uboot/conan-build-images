@@ -21,6 +21,6 @@ RUN groupadd conan \
 USER conan
 
 RUN sudo pip3 install -q --no-cache-dir \
-        conan
+    conan
 
 WORKDIR /home/conan
